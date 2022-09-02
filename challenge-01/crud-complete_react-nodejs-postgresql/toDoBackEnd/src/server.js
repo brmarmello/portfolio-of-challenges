@@ -7,3 +7,5 @@ app.use(express.json());
 app.get("/health", (req, res) => {
   return res.json("up");
 });
+
+app.listen(3333, () => console.log('Server up in port 3333'));
