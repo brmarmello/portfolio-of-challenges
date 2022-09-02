@@ -3,6 +3,7 @@ const express = require("express");
 const allTodos = [{ nome: "aaaa", status: false }];
 const toDosRoutes = express.Router();
 const { PrismaClient } = require("@prisma/client");
+const { response } = require("express");
 
 const prisma = new PrismaClient();
 
