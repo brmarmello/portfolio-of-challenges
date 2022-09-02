@@ -55,5 +55,26 @@ toDosRoutes.put("/todos", async (request, response) => {
 });
 
 // D
+todosRoutes.delete("/todos/:id", async (request, response) => {
+  const { id } = request.params;
+
+  const intId = parseInt(id);
+
+  if (!intId) {
+    return response.status(400).json("Id is mandatory");
+  }
+
+  const todoAlreadyExist = await prisma.todo.findUnique({
+    where: { id: intId },
+  });
+
+  if (!todoAlreadyExist) {
+    return response.status(404).json("Todo not exist");
+  }
+
+  await prisma.todo.delete({ where: { id: intId } });
+
+  return response.status(200).send();
+});
 
 module.exports = toDosRoutes;
