@@ -2,12 +2,19 @@ const express = require("express");
 
 const allTodos = [{ nome: "aaaa", status: false }];
 const toDosRoutes = express.Router();
+const { PrismaClient } = require("@prisma/client");
+
+const prisma = new PrismaClient();
 
 // C
-toDosRoutes.post("/todos", (request, response) => {
+toDosRoutes.post("/todos", async (request, response) => {
   const { name } = request.body;
-  allTodos.push({ name, status: false });
-  return response.status(201).json(allTodos);
+  const todo = await prisma.todo.create({
+    data: {
+      name,
+  }})
+  // allTodos.push({ name, status: false });
+  return response.status(201).json(todo);
 });
 
 // R
