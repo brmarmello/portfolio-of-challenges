@@ -1,0 +1,11 @@
+{
+  "name": "todoback",
+  "version": "1.0.0",
+  "description": "exercising a full stack crud in the form of a ToDoList app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bruno Marmello - bmDev",
+  "license": "ISC"
+}
