@@ -3,6 +3,7 @@ const express = require("express");
 const allTodos = [{ nome: "aaaa", status: false }];
 const toDosRoutes = express.Router();
 const { PrismaClient } = require("@prisma/client");
+const { response } = require("express");
 
 const prisma = new PrismaClient();
 
@@ -55,7 +56,7 @@ toDosRoutes.put("/todos", async (request, response) => {
 });
 
 // D
-todosRoutes.delete("/todos/:id", async (request, response) => {
+toDosRoutes.delete("/todos/:id", async (request, response) => {
   const { id } = request.params;
 
   const intId = parseInt(id);
