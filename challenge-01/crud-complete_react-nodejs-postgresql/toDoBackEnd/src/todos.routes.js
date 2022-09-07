@@ -56,7 +56,7 @@ toDosRoutes.put("/todos", async (request, response) => {
 });
 
 // D
-todosRoutes.delete("/todos/:id", async (request, response) => {
+toDosRoutes.delete("/todos/:id", async (request, response) => {
   const { id } = request.params;
 
   const intId = parseInt(id);
