@@ -60,7 +60,9 @@ function App() {
           }}
           className="inputName"
         ></input>
-        <button onClick={handleWithNewButton} className="newTaskButton">+ New Task</button>
+        <button onClick={handleWithNewButton} className="newTaskButton">
+          {inputVisibility ? "Confirm" : "+ New Task"}
+        </button>
       </header>
     </div>
   );
