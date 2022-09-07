@@ -29,6 +29,9 @@ const Todos = ({ todos }) => {
   };
 
 function App() {
+  async function handleWithNewButton() {
+    setinputVisibility(!inputVisibility);
+  }
   async function getTodos() {
     const response = await axios.get("http://localhost:3333/todos")
     setTodos(response.data);
@@ -57,7 +60,7 @@ function App() {
           }}
           className="inputName"
         ></input>
-        <button className="newTaskButton">+ New Task</button>
+        <button onClick={handleWithNewButton} className="newTaskButton">+ New Task</button>
       </header>
     </div>
   );
