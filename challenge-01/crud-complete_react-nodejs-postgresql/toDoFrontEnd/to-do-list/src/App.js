@@ -35,6 +35,9 @@ function App() {
   return (
     <div className="App">
       <header className="container">
+        <div className="header">
+          <h1>My To Do List</h1>
+        </div>
         <Todos todos={arrayTodos}></Todos>
       </header>
     </div>
