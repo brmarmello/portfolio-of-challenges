@@ -39,6 +39,8 @@ function App() {
           <h1>My To Do List</h1>
         </div>
         <Todos todos={arrayTodos}></Todos>
+        <input className="inputName"></input>
+        <button className="newTaskButton">+ New Task</button>
       </header>
     </div>
   );
