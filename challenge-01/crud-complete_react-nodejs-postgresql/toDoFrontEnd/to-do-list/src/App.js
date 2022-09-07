@@ -36,6 +36,7 @@ function App() {
 
   const [todos, setTodos] = useState([]);
   const [inputValue, setinputValue] = useState("");
+  const [inputVisibility, setinputVisibility] = useState(false);
 
   useEffect(() => {
     getTodos();
@@ -50,6 +51,7 @@ function App() {
         <Todos todos={todos}></Todos>
         <input
           value={inputValue}
+          style={{display: inputVisibility ? "block" : "none"}}
           onChange={(event) => {
             setinputValue(event.target.value);
           }}
