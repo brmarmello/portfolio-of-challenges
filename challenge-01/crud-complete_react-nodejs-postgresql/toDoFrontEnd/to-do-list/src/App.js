@@ -13,12 +13,16 @@ const Todos = ({ todos }) => {
         {todos.map((todo) => {
           return (
             <div className="todo">
+              <button
+                className="checkbox"
+                style={{ backgroundColor: todo.status ? "#A879E6" : "white" }}
+              ></button>
               <p>{todo.name}</p>
               <button>
-                <AiOutlineEdit></AiOutlineEdit>
+                <AiOutlineEdit  size={20} color={"#64697b"}></AiOutlineEdit>
               </button>
               <button>
-                <AiOutlineDelete></AiOutlineDelete>
+                <AiOutlineDelete  size={20} color={"#64697b"}></AiOutlineDelete>
               </button>
             </div>
           );
