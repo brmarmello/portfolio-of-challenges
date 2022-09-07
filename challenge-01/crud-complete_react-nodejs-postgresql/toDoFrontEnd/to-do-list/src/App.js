@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 
 const arrayTodos = [
   { name: "Limpar a Casa", status: false },
@@ -12,18 +13,13 @@ const Todos = ({ todos }) => {
         {todos.map((todo) => {
           return (
             <div className="todo">
-              {/* <button
-                onClick={() => modifyStatusTodo(todo)}
-                className="checkbox"
-                style={{ backgroundColor: todo.status ? "#A879E6" : "white" }}
-              ></button> */}
               <p>{todo.name}</p>
-              {/* <button onClick={() => handleWithEditButtonClick(todo)}>
-                <AiOutlineEdit size={20} color={"#64697b"}></AiOutlineEdit>
+              <button>
+                <AiOutlineEdit></AiOutlineEdit>
               </button>
-              <button onClick={() => deleteTodo(todo)}>
-                <AiOutlineDelete size={20} color={"#64697b"}></AiOutlineDelete>
-              </button> */}
+              <button>
+                <AiOutlineDelete></AiOutlineDelete>
+              </button>
             </div>
           );
         })}
