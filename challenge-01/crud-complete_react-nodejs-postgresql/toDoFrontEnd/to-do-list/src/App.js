@@ -35,6 +35,8 @@ function App() {
   }
 
   const [todos, setTodos] = useState([]);
+  const [inputValue, setinputValue] = useState("");
+
   useEffect(() => {
     getTodos();
   })
@@ -46,7 +48,13 @@ function App() {
           <h1>My To Do List</h1>
         </div>
         <Todos todos={todos}></Todos>
-        <input className="inputName"></input>
+        <input
+          value={inputValue}
+          onChange={(event) => {
+            setinputValue(event.target.value);
+          }}
+          className="inputName"
+        ></input>
         <button className="newTaskButton">+ New Task</button>
       </header>
     </div>
