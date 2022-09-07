@@ -1,11 +1,8 @@
 // import logo from './logo.svg';
 import './App.css';
 import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
-
-const arrayTodos = [
-  { name: "Limpar a Casa", status: false },
-  { name: "Limpar o Cachorro", status: false }
-];
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Todos = ({ todos }) => {
     return (
@@ -32,13 +29,23 @@ const Todos = ({ todos }) => {
   };
 
 function App() {
+  async function getTodos() {
+    const response = await axios.get("http://localhost:3333/todos")
+    setTodos(response.data);
+  }
+
+  const [todos, setTodos] = useState([]);
+  useEffect(() => {
+    getTodos();
+  })
+
   return (
     <div className="App">
       <header className="container">
         <div className="header">
           <h1>My To Do List</h1>
         </div>
-        <Todos todos={arrayTodos}></Todos>
+        <Todos todos={todos}></Todos>
         <input className="inputName"></input>
         <button className="newTaskButton">+ New Task</button>
       </header>
